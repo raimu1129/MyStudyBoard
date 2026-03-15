@@ -38,7 +38,18 @@ app.use((req, res, next) => {
 
 //投稿一覧
 app.get("/posts", async (req, res) => {
-    const posts = await Post.find().sort({ createdAt: -1 });
+    const keyword = req.query.keyword;
+
+    let posts;
+
+    if (keyword) {
+        posts = await Post.find({
+            title: { $regex: keyword, $options: "i" },
+        });
+    } else {
+        posts = await Post.find().sort({ createdAt: -1 });
+    }
+
     res.render("posts/index", { posts });
 });
 

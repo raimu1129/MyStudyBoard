@@ -1,12 +1,15 @@
-
 <h1>学習掲示板</h1>
+<form action="/posts" method="get">
+    <input type="text" name="keyword" placeholder="タイトル検索" />
+    <button type="submit">検索</button>
+</form>
 <ul>
     <% posts.forEach(post => { %>
-        <li>
-            <a href="/posts/<%= post.id %>">
-                <strong><%= post.title %></strong>
-            </a>
-            (<%= post.studyTime %>分)
-        </li>
+    <li>
+        <a href="/posts/<%= post.id %>">
+            <strong><%= post.title %></strong>
+        </a>
+        (<%= post.studyTime %>分)
+    </li>
     <% }) %>
 </ul>
