@@ -1,0 +1,22 @@
+<form action="<%= formAction %>" method="post">
+    <% if(methodOverride) { %>
+        <input type="hidden" name="_method" value="<%= methodOverride %>">
+    <% } %>
+
+    <div>
+        <label for="">タイトル</label><br>
+        <input type="text" name="title" value="<%= post.title || '' %>">
+    </div>
+
+    <div>
+        <label for="">内容</label><br>
+        <textarea name="content" id=""><%= post.content || '' %></textarea>
+    </div>
+
+    <div>
+        <label for="">学習時間（分）</label><br>
+        <input type="number" name="studyTime" value="<%= post.studyTime || '' %>">
+    </div>
+
+    <button type="submit"><%= buttonText %></button>
+</form>

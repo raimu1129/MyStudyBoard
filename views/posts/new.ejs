@@ -1,0 +1,14 @@
+<h1>新規投稿</h1>
+
+<% if(typeof error !== 'undefined'){ %>
+    <p style="color: red;"><%= error %></p>
+<% } %>
+
+<%- include('_form',{
+    post: {},
+    formAction: '/posts',
+    buttonText: '投稿する',
+    methodOverride: null
+}) %>
+
+<a href="/posts">一覧に戻る</a>

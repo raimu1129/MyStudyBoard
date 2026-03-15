@@ -1,0 +1,12 @@
+
+<h1>学習掲示板</h1>
+<ul>
+    <% posts.forEach(post => { %>
+        <li>
+            <a href="/posts/<%= post.id %>">
+                <strong><%= post.title %></strong>
+            </a>
+            (<%= post.studyTime %>分)
+        </li>
+    <% }) %>
+</ul>

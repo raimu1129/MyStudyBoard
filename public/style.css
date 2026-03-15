@@ -1,0 +1,18 @@
+body{
+    font-family: sans-serif;
+    width: 800px;
+    margin: 0 auto;
+}
+
+header nav a{
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #0366d6;
+}
+
+a:hover{
+    text-decoration: underline;
+}
